@@ -34,6 +34,21 @@ a {
 nav :hover {
   background-color: #ffc107;
 }
+.hero-image {
+  background-size: cover;
+}
+h1 {
+  color: white;
+  text-align: center;
+
+  padding: 10rem 0rem;
+}
+
+.credit {
+  text-align: center;
+  padding: 0rem;
+  margin: 0rem;
+}
 
 .launch-title {
   background-color: #ffc107;
@@ -48,6 +63,10 @@ article {
 }
 article h2 {
   background-color: #d1c4e9;
+}
+
+.launch {
+  background-color: rgb (237, 237, 237);
 }
 
 footer {
