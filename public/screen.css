@@ -10,3 +10,54 @@ body {
   margin: 0;
   min-height: 100%;
 }
+header {
+  background-color: rgb(81, 50, 165);
+  display: flex;
+  justify-content: space-between;
+  align-content: baseline;
+}
+
+nav {
+  margin: 2rem;
+}
+h2.head {
+  color: white;
+  margin: 2rem 0rem 1rem 2rem;
+}
+
+a {
+  color: white;
+  margin: 0rem;
+  padding: 2rem;
+}
+
+nav :hover {
+  background-color: #ffc107;
+}
+
+.launch-title {
+  background-color: #ffc107;
+  margin: 0rem;
+  padding: 1rem;
+}
+
+article {
+  background-color: #d1c4e9;
+  margin: 0rem;
+  padding: 1rem;
+}
+article h2 {
+  background-color: #d1c4e9;
+}
+
+footer {
+  background-color: rgb(81, 50, 165);
+  color: white;
+  text-align: center;
+  margin: 0rem;
+}
+
+footer p {
+  margin: 0rem;
+  padding: 3rem;
+}
