@@ -48,12 +48,13 @@ nav :hover {
 }
 .hero-image {
   background-size: cover;
-  margin: orem;
+  margin: 0rem;
+  margin-top: -1.95rem;
 }
 h1 {
   color: white;
   text-align: center;
-
+  font-size: 2.25rem;
   padding: 10rem 0rem;
 }
 
@@ -61,6 +62,7 @@ h1 {
   text-align: center;
   padding: 0rem;
   margin: 0rem;
+  margin-top: -1.85rem;
 }
 
 .launch-title {
@@ -73,13 +75,39 @@ article {
   background-color: #d1c4e9;
   margin: 0rem;
   padding: 1rem;
+  text-align: center;
+  align-content: baseline;
 }
 article h2 {
   background-color: #d1c4e9;
 }
 
+button {
+  background-color: #ffc107;
+  width: 6rem;
+  height: 7rem;
+  margin-top: 1.5rem;
+}
+
+.left-arrow {
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+.right-arrow {
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+
+.upcoming-launches {
+  display: flex;
+  justify-content: space-between;
+}
+
 .launch {
-  background-color: rgb (237, 237, 237);
+  background-color: rgb(237, 237, 237);
+  width: 15rem;
+  margin: 1rem;
 }
 
 footer {

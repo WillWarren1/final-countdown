@@ -17,6 +17,14 @@ const getNasaImage = () => {
       document
         .querySelector('.hero-image')
         .setAttribute('style', `background-image: url("${hero}")`)
+      let copyright = pic.copyright
+      if (copyright == null) {
+        copyright = 'no copyright'
+      }
+      let title = pic.title
+      document.querySelector(
+        '.credit'
+      ).textContent = `copyright: ${copyright} | title: ${title}`
     })
 }
 
