@@ -1,3 +1,8 @@
+let timer
+let updateTimer = () => {
+  timer = setTimeout(getLaunchData, 1000)
+}
+
 const main = () => {
   if (document.querySelector('h1.hello-world')) {
     document.querySelector('h1.hello-world').textContent =
@@ -5,6 +10,7 @@ const main = () => {
   }
   getNasaImage()
   getLaunchData()
+  updateTimer()
 }
 
 const getNasaImage = () => {
@@ -106,6 +112,7 @@ const getLaunchData = () => {
       document.querySelector('.launch-site').textContent = launchSite
     })
 }
+
 document.querySelector('.right-arrow').addEventListener('click', getLaunchData)
 document.querySelector('.left-arrow').addEventListener('click', getLaunchData)
 document.addEventListener('DOMContentLoaded', main)

@@ -35,7 +35,7 @@ h2.head {
 a {
   color: white;
   margin: 0rem;
-  padding: 2rem 1rem 2rem 0rem;
+  padding: 2rem 1rem 2rem 1rem;
   text-align: center;
   min-width: 5rem;
 }
@@ -63,12 +63,13 @@ h1 {
   padding: 0rem;
   margin: 0rem;
   margin-top: -1.85rem;
+  font-size: 0.77rem;
 }
 
 .launch-title {
   background-color: #ffc107;
   margin: 0rem;
-  padding: 1rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 
 article {
@@ -86,7 +87,7 @@ button {
   background-color: #ffc107;
   width: 6rem;
   height: 7rem;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
 }
 
 .left-arrow {
@@ -108,16 +109,31 @@ button {
   background-color: rgb(237, 237, 237);
   width: 15rem;
   margin: 1rem;
+  border-radius: 5%;
 }
 .mission {
+  padding: -1rem;
+  margin: 1rem;
+  text-align: center;
 }
 .details {
+  border-bottom: 1px solid gray;
+  padding: -1rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 .launch-time {
+  border-bottom: 1px solid gray;
+  padding: -1rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 .launch-site {
+  padding: -1rem;
+  margin: 1rem;
+  text-align: center;
 }
 
 footer {
