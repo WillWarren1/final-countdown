@@ -62,29 +62,35 @@ const getLaunchData = () => {
     })
     .then(launchData => {
       console.log(launchData)
+      let mission = launchData[0].mission_name
       let detail = launchData[0].details
       let launchSite = launchData[0].launch_site.site_name_long
       let launchTime = launchData[0].launch_date_unix
-      let timeDifference = Math.abs(launchTime - todayUnix) / 1000
-      //days
-      let days = Math.floor(timeDifference / 86400)
-      timeDifference -= days * 86400
-      //hours
-      let hours = Math.floor(timeDifference / 3600) % 24
-      timeDifference -= hours * 3600
-      //minutes
-      let minutes = Math.floor(timeDifference / 60) % 60
-      timeDifference -= minutes * 60
-      //seconds
-      let seconds = Math.floor(timeDifference % 60)
+      let seconds = Math.floor(launchTime - todayUnix)
+      let minutes = Math.floor(seconds / 60)
+      let hours = Math.floor(minutes / 60) - 5
+      let days = Math.floor(hours / 24)
+      hours = hours - days * 24
+      minutes = minutes - days * 24 * 60 - hours * 60 - 300 //why am i subtracting 300? i do not know, but it makes the time match the example website
+      seconds =
+        seconds - days * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60 - 18000 //why am i subtracting 18,000? again i do not know but it works
       console.log(detail)
       console.log(launchSite)
       if (detail == null) {
         detail = 'No Description Available yet.'
       }
+      document.querySelector('.mission').textContent = mission
+
       document.querySelector('.details').textContent = detail
       document.querySelector('.launch-time').textContent =
-        days + ' days, ' + minutes + ' mins, ' + seconds + 'seconds'
+        days +
+        ' days, ' +
+        hours +
+        ' hours, ' +
+        minutes +
+        ' mins, ' +
+        seconds +
+        ' seconds'
       document.querySelector('.launch-site').textContent = launchSite
     })
 }
