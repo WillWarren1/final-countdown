@@ -4,6 +4,7 @@ const main = () => {
       'Explore your universe.'
   }
   getNasaImage()
+  getLaunchData()
 }
 
 const getNasaImage = () => {
@@ -28,11 +29,13 @@ const getNasaImage = () => {
     })
 }
 
-let time = new Date(1551512700 * 1000)
+//calculate current time and current time in Unix,
+//there's probably a simpler way to do this.
+let time = new Date(1550522440 * 1000)
 console.log(time)
 let today = new Date()
 let dd = today.getDate()
-let mm = today.getMonth() + 1
+let mm = today.getMonth()
 let yyyy = today.getFullYear()
 let hour = today.getHours()
 let minute = today.getMinutes()
@@ -50,6 +53,23 @@ let todayUnix =
   new Date(Date.UTC(yyyy, mm, dd, hour, minute, seconds)).getTime() / 1000
 
 console.log(todayUnix)
-
 console.log(new Date(todayUnix * 1000))
+
+const getLaunchData = () => {
+  fetch('https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming')
+    .then(resp => {
+      return resp.json()
+    })
+    .then(launchData => {
+      console.log(launchData)
+      let detail = launchData[0].details
+      let launchSite = launchData[0].launch_site.site_name_long
+      console.log(detail)
+      console.log(launchSite)
+    })
+  if ((detail = null)) {
+    detail = 'No Description Available yet.'
+  }
+}
+
 document.addEventListener('DOMContentLoaded', main)
