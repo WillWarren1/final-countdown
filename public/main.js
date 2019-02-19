@@ -55,17 +55,29 @@ let todayUnix =
 console.log(todayUnix)
 console.log(new Date(todayUnix * 1000))
 
+let launchCounter = 0
+
+const nextLaunch = () => {
+  launchCounter = launchCounter + 1
+}
+const prevLaunch = () => {
+  launchCounter = launchCounter - 1
+}
+document.querySelector('.right-arrow').addEventListener('click', nextLaunch)
+document.querySelector('.left-arrow').addEventListener('click', prevLaunch)
+
 const getLaunchData = () => {
   fetch('https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming')
     .then(resp => {
       return resp.json()
     })
     .then(launchData => {
+      let spaceLaunch = launchData[launchCounter]
       console.log(launchData)
-      let mission = launchData[0].mission_name
-      let detail = launchData[0].details
-      let launchSite = launchData[0].launch_site.site_name_long
-      let launchTime = launchData[0].launch_date_unix
+      let mission = spaceLaunch.mission_name
+      let detail = spaceLaunch.details
+      let launchSite = spaceLaunch.launch_site.site_name_long
+      let launchTime = spaceLaunch.launch_date_unix
       let seconds = Math.floor(launchTime - todayUnix)
       let minutes = Math.floor(seconds / 60)
       let hours = Math.floor(minutes / 60) - 5
@@ -94,5 +106,6 @@ const getLaunchData = () => {
       document.querySelector('.launch-site').textContent = launchSite
     })
 }
-
+document.querySelector('.right-arrow').addEventListener('click', getLaunchData)
+document.querySelector('.left-arrow').addEventListener('click', getLaunchData)
 document.addEventListener('DOMContentLoaded', main)
