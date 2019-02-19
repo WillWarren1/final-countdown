@@ -1,7 +1,7 @@
-let timer
-let updateTimer = () => {
-  timer = setTimeout(getLaunchData, 1000)
-}
+// let timer
+// let updateTimer = () => {
+//   timer = setTimeout(getLaunchData, 1000)
+// }
 
 const main = () => {
   if (document.querySelector('h1.hello-world')) {
@@ -10,7 +10,7 @@ const main = () => {
   }
   getNasaImage()
   getLaunchData()
-  updateTimer()
+  // updateTimer()
 }
 
 const getNasaImage = () => {

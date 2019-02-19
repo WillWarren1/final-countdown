@@ -110,16 +110,19 @@ button {
   width: 15rem;
   margin: 1rem;
   border-radius: 5%;
+  display: flex;
+  flex-direction: column;
 }
 .mission {
   padding: -1rem;
   margin: 1rem;
   text-align: center;
 }
+
 .details {
   border-bottom: 1px solid gray;
   padding: -1rem;
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 0rem;
   text-align: center;
 }
 
